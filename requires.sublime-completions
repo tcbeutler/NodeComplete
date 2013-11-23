@@ -1,0 +1,10 @@
+{
+   "scope": "text.html",
+
+   "completions":
+   [
+      { "trigger": "test1;", "contents": "test1" },
+      { "trigger": "whatever", "contents": "require"},
+      { "trigger": "require", "contents": "../../requirestuff"}
+   ]
+}
