@@ -1,11 +1,27 @@
 import sublime_plugin
 import sublime
-import re
+import os
+
+ignoredDirectories = ['node_modules', 'swagger', 'generators']
 
 class NodeComplete(sublime_plugin.EventListener):
 
     def on_query_completions(self, view, prefix, locations):
-        print(sublime.active_window().project_data())
+        folders = sublime.active_window().folders()
+        currentFile = sublime.active_window().active_view().file_name()
+        
+        #map returns a list of list, flatten this
+        files = [f for sublist in map(self.getFiles, folders) for f in sublist]
+
         if (prefix in 'require'):
-            return [('require("app/dependency")', "require('../../../dependency')")]
+            relativePaths = ['require("{0}")'.format(os.path.relpath(fileName, currentFile).replace('\\', '/')) for fileName in files]
+            return [(rp, rp) for rp in relativePaths]
         return []
+
+    def getFiles(self, folder):
+        files = []
+        for rootDirectory, subDirectories, directoryFiles in os.walk(folder):
+            subDirectories[:] = [directory for directory in subDirectories if directory not in ignoredDirectories]
+            files = files + [os.path.join(rootDirectory, fileName) for fileName in directoryFiles if fileName[-3:] == '.js']
+        return files
+
