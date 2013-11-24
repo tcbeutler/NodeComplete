@@ -1,6 +1,6 @@
 #NodeComplete
   
-###Auto-complete suggestions for nodejs development.
+###Auto-complete suggestions for nodejs development in Sublime Text 3.
 
 #####Current Features
 	
@@ -11,3 +11,10 @@
   ![Input match on regular expression](http://i.imgur.com/l03I7Hb.png)
   
   ![...on pressing enter, relative path completion](http://i.imgur.com/ntFoNgB.png)
+
+#####Coming Features
+
+1. Build require functionality into command pallate
+2. Add options to turn on or off require completions in commmand pallate and/or completion prompts.
+3. Add code completion of core nodejs modules on prompts
+  * Ex: Only add "fs" prompts when "fs." is the prefix for completion.
