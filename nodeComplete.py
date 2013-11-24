@@ -11,7 +11,7 @@ class NodeComplete(sublime_plugin.EventListener):
     This is to make relative paths much easier to require.
     """
     def on_query_completions(self, view, prefix, locations):
-        if (prefix not in 'require'):
+        if not prefix or prefix not in 'require':
             return []
 
         currentFile = view.file_name()
