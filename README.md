@@ -18,3 +18,4 @@
 2. Add options to turn on or off require completions in commmand pallate and/or completion prompts.
 3. Add code completion of core nodejs modules on prompts
   * Ex: Only add "fs" prompts when "fs." is the prefix for completion.
+4. Configurable exclude directories for require completion.
