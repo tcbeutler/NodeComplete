@@ -21,7 +21,7 @@ class NodeComplete(sublime_plugin.EventListener):
         #map returns a list of lists, flatten this
         files = [f for sublist in map(getFiles, folders) for f in sublist]
 
-        relativePaths = ["require('{0}')".format(os.path.relpath(os.path.dirname(fileName), currentFile)) for fileName in files]
+        relativePaths = ["require('{0}')".format(os.path.relpath(fileName, os.path.dirname(currentFile))) for fileName in files]
         return [formatQueryCompletionPath(rp) for rp in relativePaths]
 
 def getFiles(folder):
