@@ -13,7 +13,7 @@
   ![...on pressing enter, relative path completion](http://i.imgur.com/ntFoNgB.png)
 
 #####Coming Features
-
+BIGIFX - **Change so "curDir/..." is "./curDir/..."**  
 1. Build require functionality into command pallate
 2. Add options to turn on or off require completions in commmand pallate and/or completion prompts.
 3. Add code completion of core nodejs modules on prompts
