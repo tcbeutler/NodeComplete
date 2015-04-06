@@ -19,3 +19,6 @@ BIGIFX - **Change so "curDir/..." is "./curDir/..."**
 3. Add code completion of core nodejs modules on prompts
   * Ex: Only add "fs" prompts when "fs." is the prefix for completion.
 4. Configurable exclude directories for require completion.
+5. Include top level packages from node_modules
+6. Update package.json so people can find this thing
+7. Publish in npm
